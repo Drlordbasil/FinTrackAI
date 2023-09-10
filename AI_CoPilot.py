@@ -1,13 +1,15 @@
+import subprocess
 Sure! Here's a chatbot script that helps the user run the provided `main.py` program locally on their PC:
 
 ```python
-import subprocess
+
 
 def run_program():
     try:
         subprocess.run(["python", "main.py"], check=True)
     except subprocess.CalledProcessError:
         print("An error occurred while running the program.")
+
 
 def chatbot():
     print("Welcome to the Expense Tracker Chatbot!")
@@ -25,6 +27,7 @@ def chatbot():
             break
         else:
             print("Sorry, I didn't understand that. Please try again.")
+
 
 if __name__ == "__main__":
     chatbot()
