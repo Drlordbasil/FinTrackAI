@@ -20,7 +20,8 @@ class ExpenseTrackerAPI:
         retries = 3
         for _ in range(retries):
             try:
-                transactions = requests.get(f"https://api.examplebank.com/transactions?api_key={self.api_key}")
+                transactions = requests.get(
+                    f"https://api.examplebank.com/transactions?api_key={self.api_key}")
                 self.transactions = transactions.json()
                 break
             except requests.exceptions.RequestException:
@@ -43,7 +44,8 @@ class EnhancedExpenseTracker(ExpenseTrackerAPI):
         retries = 3
         for _ in range(retries):
             try:
-                transactions = requests.get(f"https://api.examplebank.com/transactions?api_key={self.api_key}")
+                transactions = requests.get(
+                    f"https://api.examplebank.com/transactions?api_key={self.api_key}")
                 self.transactions = transactions.json()
                 break
             except requests.exceptions.RequestException:
@@ -75,7 +77,8 @@ class EnhancedExpenseTracker(ExpenseTrackerAPI):
         spending_tendencies = self.analyzer.analyze_spending_tendencies()
         budget_allocation = self.analyzer.visualize_budget_allocation()
 
-        self.insights = {'Spending Tendencies': spending_tendencies, 'Budget Allocation': budget_allocation}
+        self.insights = {'Spending Tendencies': spending_tendencies,
+                         'Budget Allocation': budget_allocation}
 
     def print_information(self):
         pass
@@ -90,7 +93,8 @@ class EnhancedExpenseTracker(ExpenseTrackerAPI):
         eet.analyze_expenses()
 
         income = 5000
-        financial_goals = {'Food': 0.2, 'Shopping': 0.1, 'Travel': 0.1, 'Utilities': 0.2, 'Entertainment': 0.1}
+        financial_goals = {'Food': 0.2, 'Shopping': 0.1,
+                           'Travel': 0.1, 'Utilities': 0.2, 'Entertainment': 0.1}
 
         eet.create_budget(income, financial_goals)
 
