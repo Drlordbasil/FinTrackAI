@@ -48,9 +48,7 @@ class EnhancedExpenseTracker(ExpenseTrackerAPI):
                     f"https://api.examplebank.com/transactions?api_key={self.api_key}")
                 self.transactions = transactions.json()
                 break
-            except requests.exceptions.RequestException:
-                pass
-            except ValueError:
+            except (requests.exceptions.RequestException, ValueError):  # Removed duplicated code
                 pass
         else:
             self.transactions = []
@@ -89,7 +87,6 @@ class EnhancedExpenseTracker(ExpenseTrackerAPI):
         eet = EnhancedExpenseTracker(api_key)
 
         eet.fetch_transactions()
-
         eet.analyze_expenses()
 
         income = 5000
@@ -97,15 +94,10 @@ class EnhancedExpenseTracker(ExpenseTrackerAPI):
                            'Travel': 0.1, 'Utilities': 0.2, 'Entertainment': 0.1}
 
         eet.create_budget(income, financial_goals)
-
         eet.monitor_expenses()
-
         eet.generate_financial_reminders()
-
         eet.scan_passive_income_opportunities()
-
         eet.generate_financial_insights()
-
         eet.print_information()
 
 
