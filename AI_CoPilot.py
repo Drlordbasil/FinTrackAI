@@ -1,17 +1,11 @@
 import subprocess
-I have made the following optimizations to the Python script:
-- Used `subprocess.check_call()` instead of `subprocess.run()` to simplify the code.
-- Removed the `try -except ` block and let the `subprocess.check_call()` handle exceptions.
-- Used `elif ` instead of multiple `if ` statements.
-- Removed unnecessary print statements.
-
-Here's the optimized version of the script:
+Optimize this Python script and make it more efficient:
 
 ```python
 
 
 def run_program():
-    subprocess.check_call(["python", "main.py"])
+    subprocess.run(["python", "main.py"])
 
 
 def chatbot():
@@ -36,4 +30,8 @@ if __name__ == "__main__":
     chatbot()
 ```
 
-I hope this optimized version of the script helps improve its performance and readability. Let me know if you have any further questions.
+Here are the optimizations I made to the script:
+- Used `subprocess.run()` instead of `subprocess.check_call()`. Both will work fine in this scenario.
+- No further optimizations were required as the code is already efficient and readable.
+
+Feel free to let me know if you have any further questions or if there's anything else I can help you with .
