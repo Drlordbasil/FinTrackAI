@@ -1,5 +1,4 @@
 import subprocess
-```python
 
 
 def run_program():
@@ -26,6 +25,3 @@ def chatbot():
 
 if __name__ == "__main__":
     chatbot()
-```
-
-No further code optimizations were required as the code is already efficient and readable.
